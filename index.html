@@ -1,231 +1,208 @@
 <!doctype html>
 <html lang="pt-br">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Kanario — Página institucional</title>
-  <meta name="description" content="Kanario — página institucional simples." />
-  <style>
-    :root{
-      --bg:#0b0c10;
-      --card:#11131a;
-      --text:#e9ecf1;
-      --muted:#aab2c0;
-      --line:#23283a;
-      --accent:#f4b400; /* amarelo discreto */
-      --accent2:#ff2a2a; /* vermelho discreto */
-    }
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Helvetica Neue", sans-serif;
-      background: radial-gradient(1200px 600px at 20% 0%, rgba(244,180,0,.08), transparent 55%),
-                  radial-gradient(900px 500px at 95% 10%, rgba(255,42,42,.06), transparent 50%),
-                  var(--bg);
-      color:var(--text);
-      line-height:1.5;
-    }
-    a{color:inherit}
-    .wrap{max-width:980px;margin:0 auto;padding:28px 18px 48px}
-    header{
-      display:flex;align-items:center;justify-content:space-between;
-      gap:16px;padding:14px 0 18px;border-bottom:1px solid var(--line);
-      position:sticky;top:0;background:rgba(11,12,16,.75);backdrop-filter: blur(10px);
-      z-index:10;
-    }
-    .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
-    .logo{
-      width:38px;height:38px;border-radius:12px;
-      background: linear-gradient(135deg, rgba(244,180,0,.25), rgba(255,42,42,.18));
-      border:1px solid rgba(244,180,0,.25);
-      display:grid;place-items:center;
-    }
-    .logo span{
-      font-weight:800; letter-spacing:-.5px; font-size:16px;
-    }
-    nav{display:flex;gap:14px;flex-wrap:wrap}
-    nav a{
-      text-decoration:none;color:var(--muted);font-size:14px;
-      padding:8px 10px;border-radius:10px;border:1px solid transparent;
-    }
-    nav a:hover{color:var(--text);border-color:rgba(255,255,255,.08);background:rgba(255,255,255,.03)}
-    .hero{padding:30px 0 10px}
-    h1{margin:0 0 10px;font-size:28px;letter-spacing:-.4px}
-    .subtitle{margin:0;color:var(--muted);max-width:72ch}
-    .grid{
-      display:grid;gap:14px;margin-top:18px;
-      grid-template-columns: repeat(12, 1fr);
-    }
-    .card{
-      background: linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.01));
-      border:1px solid rgba(255,255,255,.08);
-      border-radius:16px;
-      padding:16px;
-    }
-    .card h2{margin:0 0 10px;font-size:16px}
-    .card p{margin:0;color:var(--muted);font-size:14px}
-    .c1{grid-column: span 7}
-    .c2{grid-column: span 5}
-    .c3{grid-column: span 12}
-    @media (max-width: 820px){
-      .c1,.c2,.c3{grid-column: span 12}
-      header{position:static;background:transparent;backdrop-filter:none}
-    }
-    .pill{
-      display:inline-flex;align-items:center;gap:8px;
-      font-size:12px;color:var(--muted);
-      border:1px solid rgba(255,255,255,.10);
-      padding:6px 10px;border-radius:999px;
-      margin-top:12px;
-    }
-    .dot{width:8px;height:8px;border-radius:50%;background:var(--accent)}
-    .section{padding-top:22px}
-    .kv{display:grid;grid-template-columns: 170px 1fr;gap:10px;margin-top:10px}
-    .k{color:var(--muted);font-size:13px}
-    .v{font-size:14px}
-    .note{
-      margin-top:14px;
-      color:var(--muted);
-      font-size:12px;
-      border-left:3px solid rgba(244,180,0,.55);
-      padding-left:10px;
-    }
-    footer{
-      margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
-      color:var(--muted);font-size:12px;
-      display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap;
-    }
-    .btnrow{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
-    .btn{
-      display:inline-flex;align-items:center;gap:8px;
-      text-decoration:none;
-      border:1px solid rgba(255,255,255,.10);
-      padding:10px 12px;border-radius:12px;
-      background:rgba(255,255,255,.03);
-      font-size:14px;color:var(--text);
-    }
-    .btn:hover{border-color:rgba(255,255,255,.18);background:rgba(255,255,255,.05)}
-    .tag{
-      display:inline-block;margin-top:10px;
-      font-size:12px;color:var(--muted);
-      padding:4px 8px;border-radius:999px;
-      border:1px solid rgba(255,255,255,.10);
-    }
-  </style>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Kanario</title>
+
+<style>
+:root{
+  --bg:#0b0c10;
+  --text:#f2f4f8;
+  --muted:#aab2c0;
+  --line:rgba(255,255,255,.08);
+  --radius:26px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  font-family: system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:
+    radial-gradient(1000px 600px at 25% -10%, rgba(244,180,0,.12), transparent 60%),
+    radial-gradient(1000px 600px at 80% 0%, rgba(255,42,42,.10), transparent 55%),
+    radial-gradient(800px 500px at 50% 120%, rgba(255,255,255,.05), transparent 60%),
+    var(--bg);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px 20px;
+}
+
+.card{
+  width:min(1000px,100%);
+  border-radius:var(--radius);
+  background:linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.02));
+  border:1px solid var(--line);
+  box-shadow:0 30px 90px rgba(0,0,0,.55);
+  overflow:hidden;
+  backdrop-filter: blur(18px);
+}
+
+header{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:28px 32px;
+  border-bottom:1px solid var(--line);
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:18px;
+}
+
+.mark{
+  width:140px;
+  height:140px;
+  border-radius:22px;
+  background:rgba(255,255,255,.10); /* mais claro */
+  border:1px solid rgba(255,255,255,.25);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  backdrop-filter: blur(6px);
+}
+
+.mark img{
+  width:92%;
+  height:92%;
+  object-fit:contain;
+}
+
+.brandtext strong{
+  font-size:18px;
+  letter-spacing:-.3px;
+}
+
+.brandtext span{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+  margin-top:4px;
+}
+
+.links{
+  display:flex;
+  gap:12px;
+}
+
+.links a{
+  text-decoration:none;
+  font-size:12px;
+  color:var(--muted);
+  padding:8px 12px;
+  border-radius:14px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(255,255,255,.04);
+  transition:.2s ease;
+}
+
+.links a:hover{
+  color:var(--text);
+  background:rgba(255,255,255,.08);
+}
+
+main{
+  padding:90px 20px 110px;
+  text-align:center;
+  position:relative;
+}
+
+.glow{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  width:420px;
+  height:420px;
+  background:
+    radial-gradient(circle at 35% 35%, rgba(244,180,0,.35), transparent 60%),
+    radial-gradient(circle at 65% 65%, rgba(255,42,42,.30), transparent 60%);
+  filter:blur(90px);
+  opacity:.85;
+  z-index:0;
+}
+
+main h1{
+  position:relative;
+  z-index:1;
+  font-size:46px;
+  letter-spacing:-1px;
+  margin:0;
+}
+
+.tagline{
+  position:relative;
+  z-index:1;
+  margin-top:14px;
+  font-size:15px;
+  color:var(--muted);
+}
+
+footer{
+  border-top:1px solid var(--line);
+  padding:22px 32px;
+  font-size:12px;
+  color:var(--muted);
+}
+
+@media (max-width:700px){
+  header{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:18px;
+  }
+  .glow{
+    width:300px;
+    height:300px;
+  }
+  main h1{
+    font-size:36px;
+  }
+}
+</style>
 </head>
 
 <body>
-  <div class="wrap">
-    <header>
-      <a class="brand" href="#top" aria-label="Kanario">
-        <div class="logo" aria-hidden="true"><span>K</span></div>
-        <div>
-          <div style="font-weight:700; letter-spacing:-.2px;">Kanario</div>
-          <div style="font-size:12px; color:var(--muted); margin-top:2px;">Página institucional</div>
-        </div>
-      </a>
 
-      <nav>
-        <a href="#sobre">Sobre</a>
-        <a href="#dados">Dados</a>
-        <a href="#contato">Contato</a>
-      </nav>
-    </header>
+<div class="card">
 
-    <main id="top">
-      <section class="hero">
-        <h1>Kanario</h1>
-        <p class="subtitle">
-          Estrutura empresarial de <strong>Ricardo</strong> e <strong>Michelle</strong> para fins administrativos e emissão de notas fiscais,
-          em regime de prestação de serviços. Este site é apenas informativo.
-        </p>
-        <div class="pill"><span class="dot"></span> Sem ofertas, catálogo ou divulgação comercial</div>
-      </section>
+  <header>
+    <div class="brand">
+      <div class="mark">
+        <img src="assets/kanario-logo.png" alt="Kanario">
+      </div>
+      <div class="brandtext">
+        
+      </div>
+    </div>
 
-      <section class="grid" aria-label="Conteúdo">
-        <article class="card c1" id="sobre">
-          <h2>Sobre</h2>
-          <p>
-            A Kanario é uma empresa constituída por Ricardo e Michelle, utilizada para formalização de prestação de serviços
-            e emissão de documentos fiscais. Não atua como vitrine de produtos ou serviços e não realiza captação comercial por este site.
-          </p>
-          <div class="note">
-            Se você chegou aqui por link ou referência, este endereço serve como identificação institucional e canal de contato.
-          </div>
-        </article>
+    <div class="links">
+      <a href="assets/kanario-logo.png" target="_blank">PNG</a>
+      <a href="assets/kanario-logo.svg" target="_blank">SVG</a>
+    </div>
+  </header>
 
-        <aside class="card c2">
-          <h2>Uso típico</h2>
-          <p>
-            Emissão de notas, organização administrativa e registro de informações essenciais.
-          </p>
-          <div class="tag">GitHub Pages</div>
-          <div class="tag" style="margin-left:8px;">Site estático</div>
-        </aside>
+  <main>
+    <div class="glow"></div>
+    <h1>Kanario</h1>
+    <div class="tagline">Estrutura e organização.</div>
+  </main>
 
-        <article class="card c3" id="dados">
-          <h2>Dados institucionais</h2>
-          <p>Preencha com os dados oficiais da empresa (se desejar).</p>
+  <footer>
+    © <span id="year"></span> Kanario
+  </footer>
 
-          <div class="kv">
-            <div class="k">Razão social</div>
-            <div class="v">Kanario (preencher)</div>
+</div>
 
-            <div class="k">CNPJ</div>
-            <div class="v">00.000.000/0000-00 (preencher)</div>
+<script>
+document.getElementById("year").textContent = new Date().getFullYear();
+</script>
 
-            <div class="k">Cidade/UF</div>
-            <div class="v">Barueri/SP (ajustar)</div>
-
-            <div class="k">E-mail</div>
-            <div class="v">contato@kanario.com.br (ajustar)</div>
-          </div>
-
-          <div class="note">
-            Dica: se você não quiser expor CNPJ/endereço no site, mantenha apenas e-mail e cidade/UF.
-          </div>
-        </article>
-
-        <article class="card c3" id="contato">
-          <h2>Contato</h2>
-          <p>Use um canal simples. Evite expor número pessoal se não quiser.</p>
-
-          <div class="btnrow">
-            <a class="btn" href="mailto:contato@kanario.com.br">✉️ Enviar e-mail</a>
-            <a class="btn" href="#" onclick="copyEmail(event)">📋 Copiar e-mail</a>
-          </div>
-
-          <p class="note" id="copyStatus" style="display:none;"></p>
-        </article>
-      </section>
-
-      <footer>
-        <div>© <span id="year"></span> Kanario — página institucional.</div>
-        <div style="opacity:.9;">Última atualização: <span id="updated"></span></div>
-      </footer>
-    </main>
-  </div>
-
-  <script>
-    // ano automático
-    document.getElementById("year").textContent = new Date().getFullYear();
-
-    // data de build simples (pode editar manualmente se preferir)
-    const d = new Date();
-    const pad = (n)=> String(n).padStart(2,'0');
-    document.getElementById("updated").textContent =
-      `${pad(d.getDate())}/${pad(d.getMonth()+1)}/${d.getFullYear()}`;
-
-    function copyEmail(e){
-      e.preventDefault();
-      const email = "contato@kanario.com.br"; // ajuste aqui
-      navigator.clipboard.writeText(email).then(()=>{
-        const el = document.getElementById("copyStatus");
-        el.style.display = "block";
-        el.textContent = "E-mail copiado: " + email;
-        setTimeout(()=> el.style.display="none", 2500);
-      });
-    }
-  </script>
 </body>
 </html>
